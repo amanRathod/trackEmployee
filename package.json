@@ -1,0 +1,43 @@
+{
+  "name": "trackemployee",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon babel-node src/index.js",
+    "dev:start": "clear; nodemon --exec babel-node src/index.js",
+    "pretest": "eslint --ignore-path .gitignore ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.17.10",
+    "@babel/node": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "babel-loader": "^8.2.5",
+    "eslint": "^8.15.0"
+  },
+  "dependencies": {
+    "nodemon": "^2.0.16",
+    "aws-sdk": "^2.1130.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "express": "^4.18.1",
+    "express-validator": "^6.14.0",
+    "helmet": "^5.0.2",
+    "ioredis": "^5.0.4",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.2",
+    "mongoose-unique-validator": "^3.0.0",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.7.5",
+    "nodemailer-sendgrid": "^1.0.3",
+    "prettier": "^2.6.2",
+    "slugify": "^1.6.5"
+  }
+}
