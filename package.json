@@ -15,7 +15,7 @@
     "@babel/node": "^7.17.10",
     "@babel/preset-env": "^7.17.10",
     "babel-loader": "^8.2.5",
-    "eslint": "^8.15.0",
+    "eslint": "^8.15.0"
   },
   "dependencies": {
     "nodemon": "^2.0.16",
