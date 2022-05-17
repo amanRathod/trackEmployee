@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 /* eslint-disable no-console */
+=======
+>>>>>>> 53a7a5843d75005efec012ab0bb064a548de358a
 const mongoose = require('mongoose');
 
 const connectDB = async() => {

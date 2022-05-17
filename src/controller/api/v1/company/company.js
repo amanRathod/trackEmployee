@@ -32,7 +32,13 @@ exports.createCompany = async (req, res) => {
     await company.save();
     
     res.status(200).json({
+<<<<<<< HEAD
       company
+=======
+      type: 'success',
+      message: 'You have successfully created company',
+      company,
+>>>>>>> 53a7a5843d75005efec012ab0bb064a548de358a
     });
 
   } catch (err) {

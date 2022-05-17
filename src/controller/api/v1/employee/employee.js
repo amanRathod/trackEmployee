@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 // const { validationResult } = require('express-validator');
+=======
+const { validationResult } = require('express-validator');
+>>>>>>> 53a7a5843d75005efec012ab0bb064a548de358a
 const Employee = require('../../../../model/employee');
 const Company = require('../../../../model/company');
 
 exports.join = async(req, res) => {
   try {
+<<<<<<< HEAD
     // const error = validationResult(req);
     // if (!error.isEmpty()) {
     //   return res.status(422).json({
@@ -13,6 +18,17 @@ exports.join = async(req, res) => {
     // }
 
     // const { companyId } = req.body;
+=======
+    const error = validationResult(req);
+    if (!error.isEmpty()) {
+      return res.status(422).json({
+        type: 'warning',
+        message: error.array()[0].msg,
+      });
+    }
+
+    const { companyId } = req.body;
+>>>>>>> 53a7a5843d75005efec012ab0bb064a548de358a
 
     const employee = await Employee.findById({_id: req.user._id});
 
@@ -27,16 +43,28 @@ exports.join = async(req, res) => {
     // added companyId into currentCompany
     await Employee.findByIdAndUpdate({_id: req.user._id}, {
       $set: {
+<<<<<<< HEAD
         currentCompany: req.params.companyId,
         startDate: new Date(),
       },
       $pull: {
         pastCompany: req.params.companyId,
+=======
+        currentCompany: companyId,
+        startDate: new Date(),
+      },
+      $pull: {
+        pastCompany: companyId,
+>>>>>>> 53a7a5843d75005efec012ab0bb064a548de358a
       }
     })
 
     // registered employee into compnay
+<<<<<<< HEAD
     await Company.findByIdAndUpdate({_id: req.params.companyId}, {
+=======
+    await Company.findByIdAndUpdate({_id: companyId}, {
+>>>>>>> 53a7a5843d75005efec012ab0bb064a548de358a
       $push: {
         currentEmployees: employee._id
       }
@@ -59,6 +87,7 @@ exports.join = async(req, res) => {
 // leave company 
 exports.leave = async(req, res) => {
   try {
+<<<<<<< HEAD
     // const error = validationResult(req);
     // if (!error.isEmpty()) {
     //   return res.status(422).json({
@@ -68,25 +97,48 @@ exports.leave = async(req, res) => {
     // }
 
     // const { companyId } = req.body;
+=======
+    const error = validationResult(req);
+    if (!error.isEmpty()) {
+      return res.status(422).json({
+        type: 'warning',
+        message: error.array()[0].msg,
+      });
+    }
+
+    const { companyId } = req.body;
+>>>>>>> 53a7a5843d75005efec012ab0bb064a548de358a
 
     // added companyId into pastCompany attribute
     await Employee.findByIdAndUpdate({_id: req.user._id}, {
       $addToSet: {
+<<<<<<< HEAD
         pastCompany: req.params.companyId,    
+=======
+        pastCompany: companyId,    
+>>>>>>> 53a7a5843d75005efec012ab0bb064a548de358a
       }
     })
 
     // removed companyId from currentCompany and added into pastCopany array
     const employee = await Employee.findByIdAndUpdate({_id: req.user._id}, {
       $push: {
+<<<<<<< HEAD
         pastCompany: req.params.companyId,
+=======
+        pastCompany: companyId,
+>>>>>>> 53a7a5843d75005efec012ab0bb064a548de358a
       }
     })
     employee.currentCompany = null;
     await employee.save();
     
     // updated curretEmploye and pastEmployee of company
+<<<<<<< HEAD
     await Company.findByIdAndUpdate({_id: req.params.companyId}, {
+=======
+    await Company.findByIdAndUpdate({_id: companyId}, {
+>>>>>>> 53a7a5843d75005efec012ab0bb064a548de358a
       $pull: {
         currentEmployees: employee._id,
       }, 

@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 /* eslint-disable no-console */
+=======
+>>>>>>> 53a7a5843d75005efec012ab0bb064a548de358a
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
@@ -33,5 +36,8 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`server started at http://localhost:${PORT}`);
 });
+<<<<<<< HEAD
 
 module.exports = app;
+=======
+>>>>>>> 53a7a5843d75005efec012ab0bb064a548de358a

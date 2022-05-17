@@ -6,8 +6,12 @@
   "scripts": {
     "start": "nodemon babel-node src/index.js",
     "dev:start": "clear; nodemon --exec babel-node src/index.js",
+<<<<<<< HEAD
     "pretest": "eslint --ignore-path .gitignore .",
     "test": "mocha --timeout 10000 ./src/test/*.js"
+=======
+    "pretest": "eslint --ignore-path .gitignore ."
+>>>>>>> 53a7a5843d75005efec012ab0bb064a548de358a
   },
   "author": "",
   "license": "ISC",
@@ -16,10 +20,14 @@
     "@babel/node": "^7.17.10",
     "@babel/preset-env": "^7.17.10",
     "babel-loader": "^8.2.5",
+<<<<<<< HEAD
     "chai": "^4.3.6",
     "chai-http": "^4.3.0",
     "eslint": "^8.15.0",
     "mocha": "^10.0.0"
+=======
+    "eslint": "^8.15.0"
+>>>>>>> 53a7a5843d75005efec012ab0bb064a548de358a
   },
   "dependencies": {
     "nodemon": "^2.0.16",
