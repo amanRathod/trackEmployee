@@ -61,7 +61,7 @@ exports.login = async(req, res) => {
 
     // destructure the request body
     const { email, password } = req.body;
-
+    
     // verify user email
     const user = await Employee.findOne({email: email});
     if (!user) {
@@ -71,6 +71,7 @@ exports.login = async(req, res) => {
       });
     }
 
+    // console.log('here');
     // verify User password
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
